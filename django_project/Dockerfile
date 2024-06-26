@@ -16,5 +16,7 @@ RUN pip install -r requirements.txt
 # Copia o código para o contêiner
 COPY . /code/
 
+RUN python manage.py collectstatic --no-input
+
 # Comando padrão para executar o servidor
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
